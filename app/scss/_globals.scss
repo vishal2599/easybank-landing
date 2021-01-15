@@ -39,7 +39,7 @@ a, a:visited, a:hover{
 
 // Buttons
 button, .button{
-    padding: 1rem 1.875rem;
+    padding: 0.875rem 2.1875rem;
     background: linear-gradient(to right, $limeGreen, $brightCyan);
     border:0;
     border-radius: 50px;
@@ -51,10 +51,14 @@ button, .button{
 // Visibility
 
 .hide-for-mobile{
-    // Hide for Tablet and Mobile
+    @include breakpoint-down(medium){
+        display: none;
+    }
 
 }
 
 .hide-for-desktop{
-    // Hide for Desktop
+    @include breakpoint-up(large){
+        display: none;
+    }
 }
