@@ -109,6 +109,37 @@ h1,
 h2,
 h3 {
   margin-top: 0;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #2d314d;
+}
+
+h1 {
+  font-size: 2.35rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+}
+
+@media (min-width: 64em) {
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
 }
 
 a,
@@ -123,10 +154,17 @@ a:hover {
 }
 
 .container--pall {
-  padding-top: 2.25rem;
+  padding-top: 4.375rem;
   padding-right: 1.5rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: 4.375rem;
   padding-left: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .container--pall {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 .container--px {
@@ -135,12 +173,25 @@ a:hover {
 }
 
 .container--py {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+}
+
+@media (min-width: 64em) {
+  .container--py {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 .container--pt {
-  padding-top: 2.25rem;
+  padding-top: 4.375rem;
+}
+
+@media (min-width: 64em) {
+  .container--pt {
+    padding-top: 6rem;
+  }
 }
 
 .container--pr {
@@ -148,7 +199,13 @@ a:hover {
 }
 
 .container--pb {
-  padding-bottom: 2.25rem;
+  padding-bottom: 4.375rem;
+}
+
+@media (min-width: 64em) {
+  .container--pb {
+    padding-bottom: 6rem;
+  }
 }
 
 .container--pl {
@@ -344,6 +401,13 @@ button:hover,
   min-height: 17.5rem;
 }
 
+@media (min-width: 40em) {
+  .hero__image {
+    min-height: 25rem;
+    background-position: center 70%;
+  }
+}
+
 @media (min-width: 64em) {
   .hero__image {
     -webkit-box-flex: 3;
@@ -357,41 +421,42 @@ button:hover,
   }
 }
 
-.hero__image::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: url("/images/bg-intro-desktop.svg");
-  background-size: 93%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
 @media (min-width: 64em) {
   .hero__image::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-image: url("/images/bg-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
     width: 150%;
     background-size: 122%;
-    background-repeat: no-repeat;
-    background-position: 0 83%;
+    background-position: 0% 83%;
   }
 }
 
 .hero__image::after {
-  content: '';
+  content: "";
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   background-image: url("/images/image-mockups.png");
   background-size: 93%;
   background-repeat: no-repeat;
   background-position: center bottom;
 }
 
+@media (min-width: 40em) {
+  .hero__image::after {
+    background-size: 52%;
+  }
+}
+
 @media (min-width: 64em) {
   .hero__image::after {
     width: 120%;
-    height: 100%;
+    height: 122%;
+    background-size: 94%;
     background-position: center 150%;
     left: 22%;
   }
@@ -413,22 +478,84 @@ button:hover,
   }
 }
 
-.hero__text h1 {
-  font-weight: 300;
-  font-size: 2.35rem;
-  line-height: 1.15;
-  color: #2d314d;
-  margin-bottom: 1.5rem;
+.feature {
+  background: #f3f4f6;
+  text-align: center;
 }
 
-@media (min-width: 64em) {
-  .hero__text h1 {
-    font-size: 3.25rem;
+@media (min-width: 40em) {
+  .feature {
+    text-align: left;
   }
 }
 
-.hero__text p {
+.feature__intro {
+  margin-bottom: 3.75rem;
+}
+
+@media (min-width: 64em) {
+  .feature__intro {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 40em) {
+  .feature__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.feature__item {
+  padding: 0.9375rem;
+}
+
+@media (min-width: 40em) {
+  .feature__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 64em) {
+  .feature__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.feature__icon {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 64em) {
+  .feature__icon {
+    margin-bottom: 2.75rem;
+  }
+}
+
+.feature__title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #2d314d;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .feature__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.feature__description {
+  font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 2.25rem;
 }
 /*# sourceMappingURL=style.css.map */
